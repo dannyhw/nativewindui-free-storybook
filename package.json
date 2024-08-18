@@ -1,14 +1,13 @@
 {
   "name": "nativewinduisb",
   "version": "1.0.0",
-  "main": "expo-router/entry",
   "scripts": {
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "start": "expo start",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" && prettier -c \"**/*.{js,jsx,ts,tsx,json}\"",
     "format": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix && prettier \"**/*.{js,jsx,ts,tsx,json}\" --write",
-    "web": "expo start --web"
+    "storybook-generate": "sb-rn-get-stories"
   },
   "dependencies": {
     "@expo/react-native-action-sheet": "^4.1.0",
@@ -28,7 +27,6 @@
     "expo-dev-launcher": "^4.0.22",
     "expo-linking": "~6.3.1",
     "expo-navigation-bar": "~3.0.4",
-    "expo-router": "~3.5.14",
     "expo-status-bar": "~1.12.1",
     "expo-store-review": "~7.0.2",
     "expo-system-ui": "~3.0.4",
@@ -47,16 +45,22 @@
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
-    "ajv": "^8.12.0",
     "@babel/core": "^7.20.0",
+    "@react-native-async-storage/async-storage": "^1.24.0",
+    "@storybook/addon-ondevice-actions": "^7.6.20",
+    "@storybook/addon-ondevice-controls": "^7.6.20",
+    "@storybook/react-native": "^7.6.20",
+    "@storybook/react": "^7.6.20",
     "@types/react": "~18.2.45",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.7.0",
+    "ajv": "^8.12.0",
+    "babel-loader": "^8.3.0",
     "eslint": "^8.57.0",
     "eslint-config-universe": "^12.0.1",
     "prettier": "^3.2.5",
-    "tailwindcss": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwindcss": "^3.4.0",
     "typescript": "~5.3.3"
   },
   "eslintConfig": {
