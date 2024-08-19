@@ -1,5 +1,8 @@
+import { ActionSheetProvider } from '@expo/react-native-action-sheet';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import type { Preview } from '@storybook/react';
 import { Text, View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const preview: Preview = {
   parameters: {
@@ -11,16 +14,28 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story, { parameters, name, title }) => {
+    (Story, { parameters, title }) => {
       if (parameters.layout === 'centered') {
         return (
           <View style={{ flex: 1 }}>
-            <Text
-              style={{ marginVertical: 16, textAlign: 'center', fontSize: 18, fontWeight: 'bold' }}>
-              {title.split('/').at(-1)}
-            </Text>
+            {parameters.showTitle ? (
+              <Text
+                style={{
+                  marginVertical: 16,
+                  textAlign: 'center',
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                {title.split('/').at(-1)}
+              </Text>
+            ) : null}
 
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <View
+              style={{
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
               <Story />
             </View>
           </View>
@@ -36,6 +51,17 @@ const preview: Preview = {
       }
 
       return <Story />;
+    },
+    (Story) => {
+      return (
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <BottomSheetModalProvider>
+            <ActionSheetProvider>
+              <Story />
+            </ActionSheetProvider>
+          </BottomSheetModalProvider>
+        </GestureHandlerRootView>
+      );
     },
   ],
 };

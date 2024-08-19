@@ -22,6 +22,7 @@ const meta = {
   },
   parameters: {
     layout: 'centered',
+    showTitle: true,
   },
 } satisfies Meta<typeof ActivityIndicator>;
 
