@@ -45,6 +45,18 @@ const preview: Preview = {
       if (parameters.layout === 'padding') {
         return (
           <View style={{ padding: 16 }}>
+            {parameters.showTitle ? (
+              <Text
+                style={{
+                  marginVertical: 16,
+                  textAlign: 'center',
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                {title.split('/').at(-1)}
+              </Text>
+            ) : null}
+
             <Story />
           </View>
         );
