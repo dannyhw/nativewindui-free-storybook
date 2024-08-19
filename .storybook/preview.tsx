@@ -17,11 +17,11 @@ const preview: Preview = {
     (Story, { parameters, title }) => {
       if (parameters.layout === 'centered') {
         return (
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1, padding: 16 }}>
             {parameters.showTitle ? (
               <Text
                 style={{
-                  marginVertical: 16,
+                  marginBottom: 16,
                   textAlign: 'center',
                   fontSize: 18,
                   fontWeight: 'bold',
@@ -48,7 +48,7 @@ const preview: Preview = {
             {parameters.showTitle ? (
               <Text
                 style={{
-                  marginVertical: 16,
+                  marginBottom: 16,
                   textAlign: 'center',
                   fontSize: 18,
                   fontWeight: 'bold',

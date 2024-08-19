@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { View } from 'react-native';
 
 import { Avatar, AvatarFallback, AvatarImage } from './Avatar';
 import { Text } from './Text';
