@@ -1,8 +1,5 @@
-import { ActionSheetProvider } from '@expo/react-native-action-sheet';
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import type { Preview } from '@storybook/react';
 import { Text, View } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const preview: Preview = {
   parameters: {
@@ -63,17 +60,6 @@ const preview: Preview = {
       }
 
       return <Story />;
-    },
-    (Story) => {
-      return (
-        <GestureHandlerRootView style={{ flex: 1 }}>
-          <BottomSheetModalProvider>
-            <ActionSheetProvider>
-              <Story />
-            </ActionSheetProvider>
-          </BottomSheetModalProvider>
-        </GestureHandlerRootView>
-      );
     },
   ],
 };
