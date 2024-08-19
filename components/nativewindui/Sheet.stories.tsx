@@ -9,7 +9,7 @@ import { useColorScheme } from '~/lib/useColorScheme';
 const meta = {
   component: Sheet,
   parameters: {
-    layout: 'padding',
+    layout: 'centered',
     showTitle: true,
   },
 } as Meta<typeof Sheet>;
